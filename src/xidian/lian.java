@@ -1,6 +1,8 @@
 package xidian;
 
 import java.io.BufferedReader;
+
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -16,153 +18,184 @@ import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 import javax.swing.JApplet;
+ public class lian{
+	 public static void mian(String[] args){
+		 
+		 
+		 
+		 
+	 }
+ }
 
-public class lian extends JApplet {
-	public static void main(String[] args){
-		System.out.println("aaa"+"\n"+"bbb"+'\n'+"cccc");
-	}
-	
-	
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	/*五子棋*/
-//	private String[][] board;
-//	private static int[][] black = new int[15][15];
-//	private static int[][] white = new int[15][15];
-//	private static int sum1 = 0;
-//	private static int sum2 = 0;
-//	private static int sum3 = 0;
-//	private static int sum4 = 0;
-//	public static int Size = 15;
-//	public static int flag = 1;
-//	public static int b = 0;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+///*
+// * 重载的构造器和重载的方法
+// * 
+// * 
+// * 其中Tree是构造器名称，info()是方法名，构造器名必须和类名一致，
+// * 重载的构造器和方法必须有独一无二的参数列表。这样编译器才能区分*/
+//class Tree {
+//	int height;
 //
-//	public static void main(String[] args) throws IOException {
-//		for (int i = 0; i < 15; i++) {
-//			for (int j = 0; j < 15; j++) {
-//				black[i][j] = 0;
-//			}
-//		}
-//
-//		String inputstr = null;
-//		lian gb = new lian();
-//		gb.initboard();
-//		gb.printboard();
-//		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-//		// br.readLine();
-//		while ((inputstr = br.readLine()) != null) {
-//			String[] pos = inputstr.split(",");
-//			int x = Integer.parseInt(pos[0]);
-//			int y = Integer.parseInt(pos[1]);
-//			if (flag % 2 == 0) {
-//				gb.board[x - 1][y - 1] = "★   ";
-//				black[x - 1][y - 1] = 1;
-//				win(black, x - 1, y - 1);
-//			}
-//			if (flag % 2 != 0) {
-//				gb.board[x - 1][y - 1] = "☆   ";
-//				white[x - 1][y - 1] = 1;
-//				win(white, x - 1, y - 1);
-//			}
-//			gb.printboard();
-//			System.out.print("请输入您下棋的坐标：");
-//		}
-//
+//	Tree() {
+//		System.out.println("种植一颗种子");
+//		height = 0;
 //	}
 //
-//	private static void win(int[][] select, int x, int y) {
-//
-//		/* 纵向监测是否满五个 */
-//		for (int i = x - 4; i <= x; i++) {
-//
-//			sum1 = select[i][y] + select[i + 1][y] + select[i + 2][y]
-//					+ select[i + 3][y] + select[i + 4][y];
-//			//System.out.println(sum1);
-//
-//			if (sum1 == 5) {
-//				System.out.print("you win!"+"\n");
-//				break;
-//			}
-//			// System.out.println(sum1);
-//		}
-//
-//		/* 监测横向是否满五个 */
-//		for (int i = y - 4; i <= y; i++) {
-//			sum2 = select[x][i] + select[x][i + 1] + select[x][i + 2]
-//					+ select[x][i + 3] + select[x][i + 4];
-//			//System.out.println(sum2);
-//			if (sum2 == 5) {
-//				System.out.print("you win!"+"\n");
-//				break;
-//			}
-//		}
-//		/* 正对角线监测是否满五个 */
-//		for (int i = 4; i >= 0; i--) {
-//
-//			sum3 = select[x - i][y - i] + select[x - i + 1][y - i + 1]
-//					+ select[x - i + 2][y - i + 2]
-//					+ select[x - i + 3][y - i + 3]
-//					+ select[x - i + 4][y - i + 4];
-//			//System.out.println(sum3);
-//			if (sum3 == 5) {
-//				System.out.print("you win!"+"\n");
-//				break;
-//			}
-//		}
-//		/* 斜对角线监测是否满五个 */
-//		for (int i = 4; i >= 0; i--) {
-//			sum4 = select[x + i][y - i] + select[x + i - 1][y - i + 1]
-//					+ select[x + i - 2][y - i + 2]
-//					+ select[x + i - 3][y - i + 3]
-//					+ select[x + i - 4][y - i + 4];
-//			//System.out.println(sum4);
-//			if (sum4 == 5) {
-//				 System.out.print("you win!"+"\n");
-//				break;
-//			}
-//		}
-//
+//	Tree(int i) {
+//		height = i;
+//		System.out.println("creat tree is" + height);
 //	}
 //
-//	private void printboard() {
-//		for (int i = 0; i < Size; i++) {
-//			for (int j = 0; j < Size; j++) {
-//				System.out.print(board[i][j]);
-//			}
-//			System.out.print("\n");
-//		}
-//		flag++;
+//	void info() {
+//		System.out.println("tree is" + height);
 //	}
 //
-//	private void initboard() {
-//		board = new String[Size][Size];
-//		for (int i = 0; i < Size; i++) {
-//			for (int j = 0; j < Size; j++) {
-//				board[i][j] = "＋   ";
-//			}
-//		}
-//
+//	// 重载方法
+//	void info(String s) {
+//		System.out.println(s + ":tree is" + height);
 //	}
 //}
+//
+//public class lian {
+//	public static void main(String[] args) {
+//		for (int i = 0; i < 6; i++) {
+//			Tree t = new Tree(i);
+//			t.info();
+//			t.info("overLoad");
+//		}
+//		// 重载构造器
+//		new Tree();
+//	}
+//
+//}
+
+/* 五子棋 */
+// private String[][] board;
+// private static int[][] black = new int[15][15];
+// private static int[][] white = new int[15][15];
+// private static int sum1 = 0;
+// private static int sum2 = 0;
+// private static int sum3 = 0;
+// private static int sum4 = 0;
+// public static int Size = 15;
+// public static int flag = 1;
+// public static int b = 0;
+//
+// public static void main(String[] args) throws IOException {
+// for (int i = 0; i < 15; i++) {
+// for (int j = 0; j < 15; j++) {
+// black[i][j] = 0;
+// }
+// }
+//
+// String inputstr = null;
+// lian gb = new lian();
+// gb.initboard();
+// gb.printboard();
+// BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+// // br.readLine();
+// while ((inputstr = br.readLine()) != null) {
+// String[] pos = inputstr.split(",");
+// int x = Integer.parseInt(pos[0]);
+// int y = Integer.parseInt(pos[1]);
+// if (flag % 2 == 0) {
+// gb.board[x - 1][y - 1] = "★   ";
+// black[x - 1][y - 1] = 1;
+// win(black, x - 1, y - 1);
+// }
+// if (flag % 2 != 0) {
+// gb.board[x - 1][y - 1] = "☆   ";
+// white[x - 1][y - 1] = 1;
+// win(white, x - 1, y - 1);
+// }
+// gb.printboard();
+// System.out.print("请输入您下棋的坐标：");
+// }
+//
+// }
+//
+// private static void win(int[][] select, int x, int y) {
+//
+// /* 纵向监测是否满五个 */
+// for (int i = x - 4; i <= x; i++) {
+//
+// sum1 = select[i][y] + select[i + 1][y] + select[i + 2][y]
+// + select[i + 3][y] + select[i + 4][y];
+// //System.out.println(sum1);
+//
+// if (sum1 == 5) {
+// System.out.print("you win!"+"\n");
+// break;
+// }
+// // System.out.println(sum1);
+// }
+//
+// /* 监测横向是否满五个 */
+// for (int i = y - 4; i <= y; i++) {
+// sum2 = select[x][i] + select[x][i + 1] + select[x][i + 2]
+// + select[x][i + 3] + select[x][i + 4];
+// //System.out.println(sum2);
+// if (sum2 == 5) {
+// System.out.print("you win!"+"\n");
+// break;
+// }
+// }
+// /* 正对角线监测是否满五个 */
+// for (int i = 4; i >= 0; i--) {
+//
+// sum3 = select[x - i][y - i] + select[x - i + 1][y - i + 1]
+// + select[x - i + 2][y - i + 2]
+// + select[x - i + 3][y - i + 3]
+// + select[x - i + 4][y - i + 4];
+// //System.out.println(sum3);
+// if (sum3 == 5) {
+// System.out.print("you win!"+"\n");
+// break;
+// }
+// }
+// /* 斜对角线监测是否满五个 */
+// for (int i = 4; i >= 0; i--) {
+// sum4 = select[x + i][y - i] + select[x + i - 1][y - i + 1]
+// + select[x + i - 2][y - i + 2]
+// + select[x + i - 3][y - i + 3]
+// + select[x + i - 4][y - i + 4];
+// //System.out.println(sum4);
+// if (sum4 == 5) {
+// System.out.print("you win!"+"\n");
+// break;
+// }
+// }
+//
+// }
+//
+// private void printboard() {
+// for (int i = 0; i < Size; i++) {
+// for (int j = 0; j < Size; j++) {
+// System.out.print(board[i][j]);
+// }
+// System.out.print("\n");
+// }
+// flag++;
+// }
+//
+// private void initboard() {
+// board = new String[Size][Size];
+// for (int i = 0; i < Size; i++) {
+// for (int j = 0; j < Size; j++) {
+// board[i][j] = "＋   ";
+// }
+// }
+//
+// }
+// }
 
 /* 求素数 */
 // short a, c;
